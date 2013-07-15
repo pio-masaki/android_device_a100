@@ -19,6 +19,23 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/ramdisk/init.vangogh.usb.rc:root/init.vangogh.usb.rc \
     $(LOCAL_PATH)/prebuilt/ramdisk/ueventd.vangogh.rc:root/ueventd.vangogh.rc
 
+ifeq ($(TARGET_PREBUILT_KERNEL),)
+   LOCAL_KERNEL := $(LOCAL_PATH)/prebuilt/kernel
+else
+   LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+endif
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_KERNEL):kernel
+
+
+    
+# copy kernel modules - these should match the above binary
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilt/modules/bcm4329.ko:system/lib/modules/bcm4329.ko \
+    $(LOCAL_PATH)/prebuilt/modules/scsi_wait_scan.ko:system/lib/modules/scsi_wait_scan.ko
+
+
 # hw permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \

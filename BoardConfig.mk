@@ -22,9 +22,12 @@ TARGET_OTA_ASSERT_DEVICE := vangogh,a100
 
 BOARD_USES_TINY_AUDIO_HW := true
 
-# kernel
-TARGET_KERNEL_SOURCE := kernel/acer/t20-common
-TARGET_KERNEL_CONFIG := cyanogenmod_vangogh_defconfig
+# kernel - build inline
+#TARGET_KERNEL_SOURCE := kernel/acer/t20-common
+#TARGET_KERNEL_CONFIG := cyanogenmod_vangogh_defconfig
+
+# kernel - prebuilt binary
+TARGET_PREBUILT_KERNEL := device/acer/a100/prebuilt/kernel
 
 BOARD_BOOTIMAGE_PARTITION_SIZE     := 8388608
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 6291456
