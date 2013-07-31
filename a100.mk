@@ -61,6 +61,10 @@ PRODUCT_COPY_FILES += $(LOCAL_PATH)/prebuilt/etc/sound/tiny_hw.xml:system/etc/so
 
 $(call inherit-product, build/target/product/full_base.mk)
 
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+
+$(call inherit-product, device/common/gps/gps_us_supl.mk)
+
 # inherit t20-common
 $(call inherit-product, device/acer/t20-common/t20-common.mk)
 
