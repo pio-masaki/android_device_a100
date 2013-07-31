@@ -75,7 +75,9 @@ PRODUCT_PROPERTY_OVERRIDES += ro.sf.lcd_density=160
     ro.setupwizard.mode=OPTIONAL \
     debug.sf.hw=1 \
     pm.sleep_mode=1 \
-    windowsmgr.max_events_per_sec=150
+    windowsmgr.max_events_per_sec=150 \
+    rild.libpath=/system/lib/libhuawei-ril.so \
+    rild.libargs=-d /dev/ttyUSB2 
 
 # inherit proprietary files
 $(call inherit-product-if-exists, vendor/acer/a100/a100-vendor.mk)
