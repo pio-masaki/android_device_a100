@@ -69,6 +69,13 @@ $(call inherit-product, device/common/gps/gps_us_supl.mk)
 $(call inherit-product, device/acer/t20-common/t20-common.mk)
 
 PRODUCT_PROPERTY_OVERRIDES += ro.sf.lcd_density=160
+    keyguard.no_require_sim=true \
+    hwui.render_dirty_regions=false \
+    hwui.disable_vsync=true \
+    ro.setupwizard.mode=OPTIONAL \
+    debug.sf.hw=1 \
+    pm.sleep_mode=1 \
+    windowsmgr.max_events_per_sec=150
 
 # inherit proprietary files
 $(call inherit-product-if-exists, vendor/acer/a100/a100-vendor.mk)
