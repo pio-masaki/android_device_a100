@@ -22,7 +22,7 @@ TARGET_OTA_ASSERT_DEVICE := vangogh,a100
 
 BOARD_USES_TINY_AUDIO_HW := true
 
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/acer/a100/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG := device/acer/a100/bluetooth
 
 # kernel - build inline
 #TARGET_KERNEL_SOURCE := kernel/acer/t20-common
