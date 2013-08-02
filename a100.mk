@@ -53,7 +53,7 @@ PRODUCT_COPY_FILES += \
 
 # Bluetooth config file
 PRODUCT_COPY_FILES += \
-    system/bluetooth/data/main.nonsmartphone.conf:system/etc/bluetooth/main.conf \ 
+    system/bluetooth/data/main.nonsmartphone.conf:system/etc/bluetooth/main.conf \
 
 TARGET_BOOTANIMATION_NAME := horizontal-1024x600
 
