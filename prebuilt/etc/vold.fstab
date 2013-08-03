@@ -11,4 +11,8 @@
 ######################
 
 # Configuration of Vangogh
-dev_mount external_sdcard /storage/sdcard1 auto /devices/platform/sdhci-tegra.2/mmc_host/mmc1
+#dev_mount external_sdcard /storage/sdcard1 auto /devices/platform/sdhci-tegra.2/mmc_host/mmc1
+dev_mount sdcard /storage/sdcard1 auto /devices/platform/sdhci-tegra.2/mmc_host/mmc1
+# Configure for USB Storage even though we have no Host ability, as it's setup in the universal init for all AX0X devices,
+# missing this crashes storage settings
+dev_mount usb1 /storage/usbdisk0 auto /devices/platform/tegra-ehci.2/usb1/1-1/1-1.1 /devices/platform/tegra-ehci.2/usb2/2-1/2-1.1 /devices/platform/tegra-ehci.2/usb2/2-1/2-1:1 /devices/platform/tegra-ehci.2/usb1/1-1/1-1:1
