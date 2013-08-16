@@ -1,7 +1,10 @@
-/recovery emmc /dev/block/mmcblk0p1
-/boot     emmc /dev/block/mmcblk0p2
-/system   ext4 /dev/block/mmcblk0p3
-/cache    ext4 /dev/block/mmcblk0p4
-/flexrom  ext4 /dev/block/mmcblk0p6
-/data     auto /dev/block/mmcblk0p8
-/emmc     vfat /dev/block/mmcblk1p1
+#<src>               <mnt_point>  <type>  <mnt_flags>  <fs_mgr_flags>  
+/dev/block/mmcblk0p1 /recovery     emmc    defaults      defaults
+/dev/block/mmcblk0p2 /boot         emmc    defaults      defaults
+/dev/block/mmcblk0p3 /system       ext4    defaults      wait    
+/dev/block/mmcblk0p4 /cache        ext4    defaults      wait,check
+/dev/block/mmcblk0p6 /flexrom      ext4    defaults      defaults   
+/dev/block/mmcblk0p8 /data         auto    defaults      wait,check
+/dev/block/mmcblk1p1 /emmc         vfat    defaults      defaults         
+     
+# /dev/block/mmcblk0p8 /data may need adjusted from auto to something else, like ext3 or vfat 
